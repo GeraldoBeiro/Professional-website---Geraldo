@@ -323,6 +323,9 @@ p.hero__subtitle{
   border-radius: 12px;
   padding: 10px;
   cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
 }
 
 .nav__toggle-bar {
@@ -331,7 +334,10 @@ p.hero__subtitle{
   background: #0f172a;
   margin: 6px 0;
   border-radius: 999px;
+  width: 100%;
+  margin: 0;
 }
+
 
 /* =========================
    Hero
