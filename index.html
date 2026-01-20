@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Geraldo Beiro — Junior Developer portfolio (Toronto). Projects in Java, Python, JavaScript/Node.js, AWS, SQL."
+    />
+
+    <title>Geraldo Beiro — Junior Developer</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Geraldo Beiro — Junior Developer" />
+    <meta
+      property="og:description"
+      content="Projects in Java, Python, JavaScript/Node.js, AWS, SQL. Based in Toronto."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/og-placeholder.png" />
+
+    <link rel="icon" href="assets/img/favicon.png" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header / Nav -->
+    <header class="header" id="top">
+      <div class="container header__inner">
+        <a class="logo" href="index.html" aria-label="Go to home">
+          <span class="logo__mark">GB</span>
+          <span class="logo__text">Geraldo Beiro</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+          </button>
+
+          <ul class="nav__list" id="navList">
+            <!-- FIX: relative link (no leading /) -->
+            <li><a class="nav__link" href="index.html">Home</a></li>
+            <li><a class="nav__link" href="projects.html">Projects</a></li>
+            <li><a class="nav__link" href="#skills">Skills</a></li>
+            <li>
+              <a class="nav__link" href="#certifications">Certifications</a>
+            </li>
+            <li><a class="nav__link" href="about.html">About</a></li>
+            <li><a class="nav__link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero section" style="padding-bottom: 12px">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <p class="eyebrow">Junior Developer • Toronto, Canada</p>
+            <h1 class="hero__title">
+              Building practical software with clean UX and solid fundamentals.
+            </h1>
+            <p class="hero__subtitle">
+              Java • Python • JavaScript/Node.js • HTML/CSS • SQL • AWS (S3,
+              Lambda, IAM) • REST APIs
+            </p>
+
+            <div class="cta-row">
+              <a
+                class="btn btn--primary"
+                href="https://github.com/GeraldoBeiro"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+              <a
+                class="btn btn--ghost"
+                href="https://www.linkedin.com/in/geraldobeiro"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a
+                class="btn btn--ghost"
+                href="resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Download Resume
+              </a>
+            </div>
+
+            <div class="hero__quick">
+              <a class="link" href="mailto:geraldo_beiro@outlook.com"
+                >geraldo_beiro@outlook.com</a
+              >
+              <span class="dot">•</span>
+
+              <!-- FIX: you removed #projects section from index, so go to projects page -->
+              <a class="link" href="projects.html">See projects</a>
+            </div>
+          </div>
+
+          <div class="hero__media" aria-label="Profile image">
+            <img
+              class="hero__img"
+              src="assets/img/light_blue.jpg"
+              alt="Portrait"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section
+        class="section"
+        id="skills"
+        style="padding-top: 35px; padding-bottom: 12px"
+      >
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Skills</h2>
+            <p class="section__desc">Skill sets in Computer Programming.</p>
+          </div>
+
+          <div class="grid-4">
+            <div class="card">
+              <h3 class="card__title">Languages</h3>
+              <p class="card__text">Java, Python, JavaScript</p>
+            </div>
+
+            <div class="card">
+              <h3 class="card__title">Web & APIs</h3>
+              <p class="card__text">HTML/CSS, Node.js basics, REST APIs</p>
+            </div>
+
+            <div class="card">
+              <h3 class="card__title">Cloud & Tools</h3>
+              <p class="card__text">AWS (S3, Lambda, IAM), Git/GitHub</p>
+            </div>
+
+            <div class="card">
+              <h3 class="card__title">Databases</h3>
+              <p class="card__text">SQL + basic NoSQL</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section class="section" id="certifications" style="padding-bottom: 12px">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Certifications</h2>
+            <p class="section__desc">
+              Add badges + verification links (when available).
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card cert">
+              <div class="cert__badge" aria-hidden="true">AWS</div>
+              <h3 class="card__title">AWS Cloud Practitioner</h3>
+              <p class="card__text">Issuer: Amazon Web Services • Year: 2026</p>
+              <a class="link" href="#" target="_blank" rel="noreferrer"
+                >Verification link</a
+              >
+            </article>
+
+            <article class="card cert">
+              <div class="cert__badge" aria-hidden="true">JS</div>
+              <h3 class="card__title">JavaScript / Web Certificate</h3>
+              <p class="card__text">Issuer: (Provider) • Year: 2026</p>
+              <a class="link" href="#" target="_blank" rel="noreferrer"
+                >Credential link</a
+              >
+            </article>
+
+            <article class="card cert">
+              <div class="cert__badge" aria-hidden="true">SQL</div>
+              <h3 class="card__title">SQL Fundamentals</h3>
+              <p class="card__text">Issuer: (Provider) • Year: 2026</p>
+              <a class="link" href="#" target="_blank" rel="noreferrer"
+                >Credential link</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section" id="contact" style="padding-top: 12px">
+        <div class="container cont-container">
+          <div style="max-width: 560px">
+<div class="contact-content">
+  <h2 class="section__title">Contact</h2>
+  <p class="card__text">Best way to reach me:</p>
+
+  <ul class="contact-list">
+    <li>
+      <span class="contact-label">Email</span>
+      <a class="link" href="mailto:geraldo_beiro@outlook.com">geraldo_beiro@outlook.com</a>
+    </li>
+    <li>
+      <span class="contact-label">GitHub</span>
+      <a class="link" href="https://github.com/GeraldoBeiro" target="_blank" rel="noreferrer">
+        github.com/GeraldoBeiro
+      </a>
+    </li>
+    <li>
+      <span class="contact-label">LinkedIn</span>
+      <a class="link" href="https://www.linkedin.com/in/geraldobeiro" target="_blank" rel="noreferrer">
+        linkedin.com/in/geraldobeiro
+      </a>
+    </li>
+  </ul>
+
+  <div class="cta-row">
+    <a class="btn btn--primary" href="mailto:geraldo_beiro@outlook.com">Email Me</a>
+    <a class="btn btn--ghost" href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>
+          © <span id="year"></span> Geraldo Beiro • Software Developer, Toronto,
+          Canada
+        </p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

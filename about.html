@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About Geraldo Beiro — Junior Developer based in Toronto."
+    />
+
+    <title>About — Geraldo Beiro</title>
+
+    <meta property="og:title" content="About — Geraldo Beiro" />
+    <meta
+      property="og:description"
+      content="Background, skills, and approach to software development."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/og-placeholder.png" />
+
+    <link rel="icon" href="assets/img/favicon.png" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header / Nav -->
+    <header class="header" id="top">
+      <div class="container header__inner">
+        <a class="logo" href="index.html" aria-label="Go to home">
+          <span class="logo__mark">GB</span>
+          <span class="logo__text">Geraldo Beiro</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+          </button>
+
+          <ul class="nav__list" id="navList">
+            <!-- FIX: relative link (no leading /) -->
+            <li><a class="nav__link" href="index.html">Home</a></li>
+            <li><a class="nav__link" href="projects.html">Projects</a></li>
+            <li><a class="nav__link" href="#skills">Skills</a></li>
+            <li><a class="nav__link" href="#certifications">Certifications</a></li>
+            <li><a class="nav__link" href="about.html">About</a></li>
+            <li><a class="nav__link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Page intro -->
+      <section class="section" style="padding-top: 44px; padding-bottom: 24px;">
+        <div class="container">
+          <div class="section__header">
+            <h1 class="section__title" style="font-size: 34px;">About Me</h1>
+            <p class="section__desc">
+              Background, skills, and how I approach software development.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About content -->
+      <section class="section">
+        <div class="container split">
+          <div class="card">
+            <h2 class="card__title">Background</h2>
+            <p class="card__text">
+              I’m a Computer Programming graduate (college diploma) based in Toronto.
+              I enjoy building practical software and learning by shipping real projects.
+            </p>
+            <p class="card__text">
+              My main focus is backend development, APIs, and cloud platforms,
+              with hands-on experience using AWS and growing familiarity with
+              Firebase and Azure.
+            </p>
+          </div>
+
+          <div class="card">
+            <h2 class="card__title">How I Work</h2>
+            <ul class="bullets">
+              <li>Start with a clear problem and simple architecture.</li>
+              <li>Prefer readable, maintainable code over over-engineering.</li>
+              <li>Use cloud services when they simplify deployment and scaling.</li>
+              <li>Document decisions clearly in README files.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills summary -->
+      <section class="section">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Core Skills</h2>
+          </div>
+
+          <div class="grid-4">
+            <div class="card">
+              <h3 class="card__title">Languages</h3>
+              <p class="card__text">Java, Python, JavaScript</p>
+            </div>
+
+            <div class="card">
+              <h3 class="card__title">Backend</h3>
+              <p class="card__text">Node.js basics, REST APIs</p>
+            </div>
+
+            <div class="card">
+              <h3 class="card__title">Cloud</h3>
+              <p class="card__text">AWS (S3, Lambda, IAM), Firebase, Azure</p>
+            </div>
+
+            <div class="card">
+              <h3 class="card__title">Data</h3>
+              <p class="card__text">SQL, basic NoSQL</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> Geraldo Beiro • Toronto, Canada</p>
+        <a class="link" href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

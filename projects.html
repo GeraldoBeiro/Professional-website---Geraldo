@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Projects by Geraldo Beiro — Junior Developer in Toronto."
+    />
+
+    <title>Projects — Geraldo Beiro</title>
+
+    <meta property="og:title" content="Projects — Geraldo Beiro" />
+    <meta property="og:description" content="Featured project + other shipped projects." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/og-placeholder.png" />
+
+    <link rel="icon" href="assets/img/favicon.png" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body class="projects-page">
+    <!-- Header / Nav (same behavior + mobile menu) -->
+    <header class="header" id="top">
+      <div class="container header__inner">
+        <a class="logo" href="index.html" aria-label="Go to home">
+          <span class="logo__mark">GB</span>
+          <span class="logo__text">Geraldo Beiro</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+            <span class="nav__toggle-bar"></span>
+          </button>
+
+          <ul class="nav__list" id="navList">
+            <li><a class="nav__link" href="index.html">Home</a></li>
+            <li><a class="nav__link is-active" href="projects.html">Projects</a></li>
+            <li><a class="nav__link" href="index.html#skills">Skills</a></li>
+            <li><a class="nav__link" href="index.html#certifications">Certifications</a></li>
+            <li><a class="nav__link" href="about.html">About</a></li>
+            <li><a class="nav__link" href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+<main>
+  <!-- Page intro -->
+  <section class="section" style="padding-top: 44px; padding-bottom: 12px;">
+    <div class="container">
+      <div class="section__header">
+        <h1 class="section__title" style="font-size: 34px;">Projects</h1>
+        <p class="section__desc">
+            A selection of hands-on projects developed to deepen my technical skills with modern development tools and platforms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Project -->
+  <section class="section" id="featured" style="padding-top: 12px;">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Featured Projects</h2>
+        <p class="section__desc">Here we have a list of projects developed.</p>
+      </div>
+          <article class="card featured">
+            <div class="featured__grid">
+              <div class="featured__media">
+                <div class="shots">
+                  <img src="assets/img/aws.JPG" alt="AWS S3 Uploader screenshot 1" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="featured__content">
+                <h3 class="card__title">AWS S3 Uploader/Downloader (Windows .exe)</h3>
+                <p class="card__text">
+                  Desktop tool for uploading/downloading files to Amazon S3, designed as a simple workflow for end users.
+                  Backed by serverless AWS services.
+                </p>
+
+                <div class="chips" aria-label="Technologies used">
+                  <span class="chip">Java</span>
+                  <span class="chip">AWS S3</span>
+                  <span class="chip">AWS Lambda</span>
+                  <span class="chip">API Gateway</span>
+                  <span class="chip">IAM</span>
+                  <span class="chip">REST</span>
+                </div>
+
+                <ul class="bullets">
+                  <li>Windows executable with a straightforward upload/download experience.</li>
+                  <li>Serverless backend to handle requests and integrations.</li>
+                  <li>Permissions managed with IAM (least privilege mindset).</li>
+                </ul>
+
+                <div class="cta-row">
+                  <a class="btn btn--ghost" href="https://github.com/GeraldoBeiro/AWS_s3_uploader" target="_blank" rel="noreferrer">
+                    View Repo
+                  </a>
+                  <a class="btn btn--primary" href="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0" target="_blank" rel="noreferrer">
+                    Download .exe (Release)
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Projects grid -->
+      <section class="section" id="projects" style="padding-top: 12px;">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Projects</h2>
+            <p class="section__desc">Deployed projects with clear goals, architecture, and execution.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card project">
+              <img class="project__thumb" src="assets/img/aws2.JPG" alt="Project thumbnail placeholder" loading="lazy" />
+              <h3 class="card__title">AWS S3 Uploader/Downloader</h3>
+              <p class="card__text">Windows app for S3 uploads/downloads with serverless backend.</p>
+              <div class="chips">
+                <span class="chip">Java</span>
+                <span class="chip">AWS</span>
+                <span class="chip">REST</span>
+              </div>
+              <div class="cta-row cta-row--compact">
+                <a class="btn btn--ghost" href="https://github.com/GeraldoBeiro/AWS_s3_uploader" target="_blank" rel="noreferrer">Repo</a>
+                <a class="btn btn--ghost" href="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0" target="_blank" rel="noreferrer">Release</a>
+              </div>
+            </article>
+
+            <article class="card project">
+              <img class="project__thumb" src="assets/img/firebase.JPG" alt="Project thumbnail placeholder" loading="lazy" />
+              <h3 class="card__title">Google Cloud / Firebase Project</h3>
+              <p class="card__text">One sentence problem + one sentence solution.</p>
+              <div class="chips">
+                <span class="chip">Node.js</span>
+                <span class="chip">SQL</span>
+                <span class="chip">API</span>
+              </div>
+              <div class="cta-row cta-row--compact">
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Repo</a>
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Live</a>
+              </div>
+            </article>
+
+            <article class="card project">
+              <img class="project__thumb" src="assets/img/azure.JPG" alt="Project thumbnail placeholder" loading="lazy" />
+              <h3 class="card__title">Microsoft Azure Project</h3>
+              <p class="card__text">One sentence problem + one sentence solution.</p>
+              <div class="chips">
+                <span class="chip">Python</span>
+                <span class="chip">REST</span>
+                <span class="chip">Git</span>
+              </div>
+              <div class="cta-row cta-row--compact">
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Repo</a>
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Demo</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> Geraldo Beiro • Software Developer, Toronto, Canada</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
