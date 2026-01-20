@@ -621,3 +621,58 @@ background:
   color: #1d4ed8;
 }
 
+
+
+/* =========================
+   Responsive (Mobile)
+========================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hero layout stacks on mobile */
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hero__media {
+    order: -1; /* optional: image above text */
+  }
+
+  .hero__title {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+}
+
+/* Cards grid collapses nicely */
+@media (max-width: 900px) {
+  .grid-4,
+  .grid-3,
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Split sections stack */
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Nav spacing */
+@media (max-width: 900px) {
+  .header__inner {
+    gap: 12px;
+  }
+}
+
+
