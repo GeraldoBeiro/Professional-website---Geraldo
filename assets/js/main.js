@@ -106,4 +106,75 @@
 
     sections.forEach((sec) => observer.observe(sec));
   }
+
+  //here we have the changing feature project
+    /* =========================
+     Featured project switcher (projects.html)
+     - Click a project card -> update Featured section
+     - Ignore clicks on buttons/links inside the card
+  ========================= */
+
+  const featuredEl = document.getElementById("featured");
+  const projectCards = document.querySelectorAll(".project");
+
+  // Only run on pages that actually have Featured + projects grid
+  if (featuredEl && projectCards.length) {
+    const featuredTitle = document.getElementById("featuredTitle");
+    const featuredDesc = document.getElementById("featuredDesc");
+    const featuredImg = document.getElementById("featuredImg");
+    const featuredChips = document.getElementById("featuredChips");
+    const featuredBullets = document.getElementById("featuredBullets");
+    const featuredRepo = document.getElementById("featuredRepo");
+    const featuredRelease = document.getElementById("featuredRelease");
+
+    projectCards.forEach((card) => {
+      card.addEventListener("click", (e) => {
+        // If user clicked a link/button inside the card, don't hijack it
+        const clickedInteractive = e.target.closest("a, button");
+        if (clickedInteractive) return;
+
+        const title = card.dataset.title || "";
+        const desc = card.dataset.desc || "";
+        const img = card.dataset.img || "";
+        const chips = (card.dataset.chips || "").split("|").map((x) => x.trim()).filter(Boolean);
+        const bullets = (card.dataset.bullets || "").split("|").map((x) => x.trim()).filter(Boolean);
+        const repo = card.dataset.repo || "#";
+        const release = card.dataset.release || "#";
+
+        if (featuredTitle) featuredTitle.textContent = title;
+        if (featuredDesc) featuredDesc.textContent = desc;
+
+        if (featuredImg && img) {
+          featuredImg.src = img;
+          featuredImg.alt = title || "Featured project image";
+        }
+
+        if (featuredChips) {
+          featuredChips.innerHTML = "";
+          chips.forEach((c) => {
+            const span = document.createElement("span");
+            span.className = "chip";
+            span.textContent = c;
+            featuredChips.appendChild(span);
+          });
+        }
+
+        if (featuredBullets) {
+          featuredBullets.innerHTML = "";
+          bullets.forEach((b) => {
+            const li = document.createElement("li");
+            li.textContent = b;
+            featuredBullets.appendChild(li);
+          });
+        }
+
+        if (featuredRepo) featuredRepo.href = repo;
+        if (featuredRelease) featuredRelease.href = release;
+
+        // Smooth scroll to featured
+        featuredEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  }
+
 })();
