@@ -11,7 +11,10 @@
     <title>Projects — Geraldo Beiro</title>
 
     <meta property="og:title" content="Projects — Geraldo Beiro" />
-    <meta property="og:description" content="Featured project + other shipped projects." />
+    <meta
+      property="og:description"
+      content="Featured project + other shipped projects."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/img/og-placeholder.png" />
 
@@ -42,9 +45,15 @@
 
           <ul class="nav__list" id="navList">
             <li><a class="nav__link" href="index.html">Home</a></li>
-            <li><a class="nav__link is-active" href="projects.html">Projects</a></li>
+            <li>
+              <a class="nav__link is-active" href="projects.html">Projects</a>
+            </li>
             <li><a class="nav__link" href="index.html#skills">Skills</a></li>
-            <li><a class="nav__link" href="index.html#certifications">Certifications</a></li>
+            <li>
+              <a class="nav__link" href="index.html#certifications"
+                >Certifications</a
+              >
+            </li>
             <li><a class="nav__link" href="about.html">About</a></li>
             <li><a class="nav__link" href="index.html#contact">Contact</a></li>
           </ul>
@@ -54,24 +63,26 @@
 
     <main>
       <!-- Page intro -->
-      <section class="section" style="padding-top: 44px; padding-bottom: 12px;">
+      <section class="section" style="padding-top: 44px; padding-bottom: 12px">
         <div class="container">
           <div class="section__header">
-            <h1 class="section__title" style="font-size: 34px;">Projects</h1>
+            <h1 class="section__title" style="font-size: 34px">Projects</h1>
             <p class="section__desc">
-              A selection of hands-on projects developed to deepen my technical skills with modern
-              development tools and platforms.
+              A selection of hands-on projects developed to deepen my technical
+              skills with modern development tools and platforms.
             </p>
           </div>
         </div>
       </section>
 
       <!-- Featured Project -->
-      <section class="section" id="featured" style="padding-top: 12px;">
+      <section class="section" id="featured" style="padding-top: 12px">
         <div class="container">
           <div class="section__header">
             <h2 class="section__title">Featured Projects</h2>
-            <p class="section__desc">Here we have a list of projects developed.</p>
+            <p class="section__desc">
+              Here we have a list of projects developed.
+            </p>
           </div>
 
           <article class="card featured">
@@ -88,14 +99,21 @@
               </div>
 
               <div class="featured__content">
-                <h3 class="card__title" id="featuredTitle">AWS S3 Uploader/Downloader (Windows .exe)</h3>
+                <h3 class="card__title" id="featuredTitle">
+                  AWS S3 Uploader/Downloader (Windows .exe)
+                </h3>
 
                 <p class="card__text" id="featuredDesc">
-                  Desktop tool for uploading/downloading files to Amazon S3, designed as a simple workflow
-                  for end users. Backed by serverless AWS services.
+                  Desktop tool for uploading/downloading files to Amazon S3,
+                  designed as a simple workflow for end users. Backed by
+                  serverless AWS services.
                 </p>
 
-                <div class="chips" id="featuredChips" aria-label="Technologies used">
+                <div
+                  class="chips"
+                  id="featuredChips"
+                  aria-label="Technologies used"
+                >
                   <span class="chip">Java</span>
                   <span class="chip">AWS S3</span>
                   <span class="chip">AWS Lambda</span>
@@ -105,27 +123,56 @@
                 </div>
 
                 <ul class="bullets" id="featuredBullets">
-                  <li>Windows executable with a straightforward upload/download experience.</li>
-                  <li>Serverless backend to handle requests and integrations.</li>
-                  <li>Permissions managed with IAM (least privilege mindset).</li>
+                  <li>
+                    Windows executable with a straightforward upload/download
+                    experience.
+                  </li>
+                  <li>
+                    Serverless backend to handle requests and integrations.
+                  </li>
+                  <li>
+                    Permissions managed with IAM (least privilege mindset).
+                  </li>
                 </ul>
 
                 <!-- UPDATED CTA: remove View Repo + Download buttons, keep only Load jobs (shown only for Firebase project) -->
                 <div class="cta-row">
+                  <a
+                    class="btn btn--ghost"
+                    id="featuredRepo"
+                    href="#"
+                    target="_blank"
+                    rel="noreferrer"
+                    style="display: none"
+                  >
+                    View Repo
+                  </a>
+
+                  <a
+                    class="btn btn--primary"
+                    id="featuredRelease"
+                    href="#"
+                    target="_blank"
+                    rel="noreferrer"
+                    style="display: none"
+                  >
+                    Download .exe
+                  </a>
+
                   <button
                     class="btn btn--ghost"
                     id="featuredLoadJobs"
                     type="button"
-                    style="display:none;"
+                    style="display: none"
                   >
                     Load jobs
                   </button>
                 </div>
 
                 <!-- Jobs output panel (only used for Firebase project) -->
-                <div id="jobsPanel" style="margin-top:12px; display:none;">
-                  <p id="jobsStatus" class="card__text" style="margin:0;"></p>
-                  <div id="jobsList" style="margin-top:10px;"></div>
+                <div id="jobsPanel" style="margin-top: 12px; display: none">
+                  <p id="jobsStatus" class="card__text" style="margin: 0"></p>
+                  <div id="jobsList" style="margin-top: 10px"></div>
                 </div>
               </div>
             </div>
@@ -134,11 +181,13 @@
       </section>
 
       <!-- Projects grid -->
-      <section class="section" id="projects" style="padding-top: 12px;">
+      <section class="section" id="projects" style="padding-top: 12px">
         <div class="container">
           <div class="section__header">
             <h2 class="section__title">Projects</h2>
-            <p class="section__desc">Deployed projects with clear goals, architecture, and execution.</p>
+            <p class="section__desc">
+              Deployed projects with clear goals, architecture, and execution.
+            </p>
           </div>
 
           <div class="grid-3">
@@ -160,7 +209,9 @@
                 loading="lazy"
               />
               <h3 class="card__title">AWS S3 Uploader/Downloader</h3>
-              <p class="card__text">Windows app for S3 uploads/downloads with serverless backend.</p>
+              <p class="card__text">
+                Windows app for S3 uploads/downloads with serverless backend.
+              </p>
               <div class="chips">
                 <span class="chip">Java</span>
                 <span class="chip">AWS</span>
@@ -201,11 +252,11 @@
                 alt="Firebase project thumbnail"
                 loading="lazy"
               />
-              
+
               <h3 class="card__title">Cloud Job Tracker API</h3>
               <p class="card__text">
-                Serverless REST API demonstrating secure cloud data access using Firebase Authentication
-                and Firestore.
+                Serverless REST API demonstrating secure cloud data access using
+                Firebase Authentication and Firestore.
               </p>
               <div class="chips">
                 <span class="chip">Firebase</span>
@@ -213,8 +264,20 @@
                 <span class="chip">Node.js</span>
               </div>
               <div class="cta-row cta-row--compact">
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Repo</a>
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Live</a>
+                <a
+                  class="btn btn--ghost"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repo</a
+                >
+                <a
+                  class="btn btn--ghost"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Live</a
+                >
               </div>
             </article>
 
@@ -236,15 +299,29 @@
                 loading="lazy"
               />
               <h3 class="card__title">Microsoft Azure Project</h3>
-              <p class="card__text">One sentence problem + one sentence solution.</p>
+              <p class="card__text">
+                One sentence problem + one sentence solution.
+              </p>
               <div class="chips">
                 <span class="chip">Python</span>
                 <span class="chip">REST</span>
                 <span class="chip">Git</span>
               </div>
               <div class="cta-row cta-row--compact">
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Repo</a>
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Demo</a>
+                <a
+                  class="btn btn--ghost"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repo</a
+                >
+                <a
+                  class="btn btn--ghost"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Demo</a
+                >
               </div>
             </article>
           </div>
@@ -255,7 +332,10 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer__inner">
-        <p>© <span id="year"></span> Geraldo Beiro • Software Developer, Toronto, Canada</p>
+        <p>
+          © <span id="year"></span> Geraldo Beiro • Software Developer, Toronto,
+          Canada
+        </p>
       </div>
     </footer>
 

@@ -82,19 +82,12 @@
     });
   }
 
-  // Add minimal active style if you want:
-  // (You can also move this to CSS. Keeping JS-only won't break anything.)
-  // We'll still toggle the class; you can add styling later.
-
   if (sections.length) {
     const observer = new IntersectionObserver(
       (entries) => {
-        // pick the most visible section
         const visible = entries
           .filter((en) => en.isIntersecting)
-          .sort(
-            (a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0),
-          )[0];
+          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];
 
         if (visible && visible.target && visible.target.id) {
           setActiveLink(visible.target.id);
@@ -103,13 +96,12 @@
       {
         root: null,
         threshold: [0.2, 0.35, 0.5, 0.65],
-      },
+      }
     );
 
     sections.forEach((sec) => observer.observe(sec));
   }
 
-  //here we have the changing feature project
   /* =========================
      Featured project switcher (projects.html)
      - Click a project card -> update Featured section
@@ -126,6 +118,7 @@
     const featuredImg = document.getElementById("featuredImg");
     const featuredChips = document.getElementById("featuredChips");
     const featuredBullets = document.getElementById("featuredBullets");
+
     const featuredRepo = document.getElementById("featuredRepo");
     const featuredRelease = document.getElementById("featuredRelease");
     const featuredLoadJobs = document.getElementById("featuredLoadJobs");
@@ -138,18 +131,7 @@
         if (clickedInteractive) return;
 
         const title = card.dataset.title || "";
-        // Show Load Jobs button ONLY for Firebase project
         const isFirebaseProject = title.toLowerCase().includes("firebase");
-
-        if (featuredLoadJobs && jobsPanel) {
-          if (isFirebaseProject) {
-            featuredLoadJobs.style.display = "inline-block";
-            jobsPanel.style.display = "block";
-          } else {
-            featuredLoadJobs.style.display = "none";
-            jobsPanel.style.display = "none";
-          }
-        }
 
         const desc = card.dataset.desc || "";
         const img = card.dataset.img || "";
@@ -164,14 +146,17 @@
         const repo = card.dataset.repo || "#";
         const release = card.dataset.release || "#";
 
+        // Update Featured text
         if (featuredTitle) featuredTitle.textContent = title;
         if (featuredDesc) featuredDesc.textContent = desc;
 
+        // Update Featured image
         if (featuredImg && img) {
           featuredImg.src = img;
           featuredImg.alt = title || "Featured project image";
         }
 
+        // Update Featured chips
         if (featuredChips) {
           featuredChips.innerHTML = "";
           chips.forEach((c) => {
@@ -182,6 +167,7 @@
           });
         }
 
+        // Update Featured bullets
         if (featuredBullets) {
           featuredBullets.innerHTML = "";
           bullets.forEach((b) => {
@@ -191,52 +177,71 @@
           });
         }
 
-        if (featuredRepo) featuredRepo.href = repo;
-        if (featuredRelease) featuredRelease.href = release;
+        // Toggle CTA buttons + jobs panel
+        if (featuredRepo && featuredRelease && featuredLoadJobs && jobsPanel) {
+          if (isFirebaseProject) {
+            // Firebase: show Load Jobs + panel
+            featuredRepo.style.display = "none";
+            featuredRelease.style.display = "none";
+            featuredLoadJobs.style.display = "inline-block";
+            jobsPanel.style.display = "block";
+          } else {
+            // Other projects: show Repo + Download, hide jobs UI
+            featuredRepo.style.display = "inline-block";
+            featuredRelease.style.display = "inline-block";
+            featuredLoadJobs.style.display = "none";
+            jobsPanel.style.display = "none";
+
+            // Only set links for non-Firebase projects
+            featuredRepo.href = repo;
+            featuredRelease.href = release;
+          }
+        }
 
         // Smooth scroll to featured
         featuredEl.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
+
     // =========================
-// Firebase "Load jobs" button (public GET)
-// =========================
-const API_BASE = "https://us-central1-cloudjobtrackerapi.cloudfunctions.net/api";
+    // Firebase "Load jobs" button (public GET)
+    // =========================
+    const API_BASE = "https://us-central1-cloudjobtrackerapi.cloudfunctions.net/api";
 
-if (featuredLoadJobs) {
-  featuredLoadJobs.addEventListener("click", async () => {
-    const statusEl = document.getElementById("jobsStatus");
-    const listEl = document.getElementById("jobsList");
+    if (featuredLoadJobs) {
+      featuredLoadJobs.addEventListener("click", async () => {
+        const statusEl = document.getElementById("jobsStatus");
+        const listEl = document.getElementById("jobsList");
 
-    if (!statusEl || !listEl) return;
+        if (!statusEl || !listEl) return;
 
-    statusEl.textContent = "Loading jobs...";
-    listEl.innerHTML = "";
+        statusEl.textContent = "Loading jobs...";
+        listEl.innerHTML = "";
 
-    try {
-      const res = await fetch(`${API_BASE}/jobs`);
-      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+        try {
+          const res = await fetch(`${API_BASE}/jobs`);
+          if (!res.ok) throw new Error(`Request failed (${res.status})`);
 
-      const jobs = await res.json();
-      statusEl.textContent = jobs.length ? `Loaded ${jobs.length} job(s).` : "No jobs found.";
+          const jobs = await res.json();
+          statusEl.textContent = jobs.length
+            ? `Loaded ${jobs.length} job(s).`
+            : "No jobs found.";
 
-      // simple rendering (no styling changes)
-      jobs.forEach((job) => {
-        const item = document.createElement("div");
-        item.style.marginBottom = "10px";
-        item.innerHTML = `
-          <strong>${job.title ?? "Untitled"}</strong><br/>
-          <span>${job.description ?? ""}</span><br/>
-          <small>Status: ${job.status ?? "n/a"}</small>
-        `;
-        listEl.appendChild(item);
+          jobs.forEach((job) => {
+            const item = document.createElement("div");
+            item.style.marginBottom = "10px";
+            item.innerHTML = `
+              <strong>${job.title ?? "Untitled"}</strong><br/>
+              <span>${job.description ?? ""}</span><br/>
+              <small>Status: ${job.status ?? "n/a"}</small>
+            `;
+            listEl.appendChild(item);
+          });
+        } catch (err) {
+          statusEl.textContent = "Failed to load jobs.";
+          listEl.textContent = String(err);
+        }
       });
-    } catch (err) {
-      statusEl.textContent = "Failed to load jobs.";
-      listEl.textContent = String(err);
     }
-  });
-}
-
   }
 })();
