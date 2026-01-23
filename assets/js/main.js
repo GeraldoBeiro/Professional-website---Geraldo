@@ -87,7 +87,9 @@
       (entries) => {
         const visible = entries
           .filter((en) => en.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];
+          .sort(
+            (a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0),
+          )[0];
 
         if (visible && visible.target && visible.target.id) {
           setActiveLink(visible.target.id);
@@ -96,7 +98,7 @@
       {
         root: null,
         threshold: [0.2, 0.35, 0.5, 0.65],
-      }
+      },
     );
 
     sections.forEach((sec) => observer.observe(sec));
@@ -123,6 +125,26 @@
     const featuredRelease = document.getElementById("featuredRelease");
     const featuredLoadJobs = document.getElementById("featuredLoadJobs");
     const jobsPanel = document.getElementById("jobsPanel");
+    // Initialize Featured CTA based on current Featured title (page load)
+
+    (function initFeaturedCTA() {
+      const currentTitle = (featuredTitle?.textContent || "").toLowerCase();
+      const isFirebase = currentTitle.includes("firebase");
+
+      if (featuredRepo && featuredRelease && featuredLoadJobs && jobsPanel) {
+        if (isFirebase) {
+          featuredRepo.style.display = "none";
+          featuredRelease.style.display = "none";
+          featuredLoadJobs.style.display = "inline-block";
+          jobsPanel.style.display = "block";
+        } else {
+          featuredRepo.style.display = "inline-block";
+          featuredRelease.style.display = "inline-block";
+          featuredLoadJobs.style.display = "none";
+          jobsPanel.style.display = "none";
+        }
+      }
+    })();
 
     projectCards.forEach((card) => {
       card.addEventListener("click", (e) => {
@@ -206,7 +228,8 @@
     // =========================
     // Firebase "Load jobs" button (public GET)
     // =========================
-    const API_BASE = "https://us-central1-cloudjobtrackerapi.cloudfunctions.net/api";
+    const API_BASE =
+      "https://us-central1-cloudjobtrackerapi.cloudfunctions.net/api";
 
     if (featuredLoadJobs) {
       featuredLoadJobs.addEventListener("click", async () => {
