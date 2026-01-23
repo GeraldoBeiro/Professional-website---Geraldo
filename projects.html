@@ -11,7 +11,10 @@
     <title>Projects — Geraldo Beiro</title>
 
     <meta property="og:title" content="Projects — Geraldo Beiro" />
-    <meta property="og:description" content="Featured project + other shipped projects." />
+    <meta
+      property="og:description"
+      content="Featured project + other shipped projects."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/img/og-placeholder.png" />
 
@@ -42,9 +45,15 @@
 
           <ul class="nav__list" id="navList">
             <li><a class="nav__link" href="index.html">Home</a></li>
-            <li><a class="nav__link is-active" href="projects.html">Projects</a></li>
+            <li>
+              <a class="nav__link is-active" href="projects.html">Projects</a>
+            </li>
             <li><a class="nav__link" href="index.html#skills">Skills</a></li>
-            <li><a class="nav__link" href="index.html#certifications">Certifications</a></li>
+            <li>
+              <a class="nav__link" href="index.html#certifications"
+                >Certifications</a
+              >
+            </li>
             <li><a class="nav__link" href="about.html">About</a></li>
             <li><a class="nav__link" href="index.html#contact">Contact</a></li>
           </ul>
@@ -52,157 +61,266 @@
       </div>
     </header>
 
-<main>
-  <!-- Page intro -->
-  <section class="section" style="padding-top: 44px; padding-bottom: 12px;">
-    <div class="container">
-      <div class="section__header">
-        <h1 class="section__title" style="font-size: 34px;">Projects</h1>
-        <p class="section__desc">
-            A selection of hands-on projects developed to deepen my technical skills with modern development tools and platforms.</p>
-      </div>
-    </div>
-  </section>
-
-<!-- Featured Project -->
-<section class="section" id="featured" style="padding-top: 12px;">
-  <div class="container">
-    <div class="section__header">
-      <h2 class="section__title">Featured Projects</h2>
-      <p class="section__desc">Here we have a list of projects developed.</p>
-    </div>
-
-    <article class="card featured">
-      <div class="featured__grid">
-        <div class="featured__media">
-          <div class="shots">
-            <img id="featuredImg" src="assets/img/aws.JPG" alt="Featured project screenshot" loading="lazy" />
+    <main>
+      <!-- Page intro -->
+      <section class="section" style="padding-top: 44px; padding-bottom: 12px">
+        <div class="container">
+          <div class="section__header">
+            <h1 class="section__title" style="font-size: 34px">Projects</h1>
+            <p class="section__desc">
+              A selection of hands-on projects developed to deepen my technical
+              skills with modern development tools and platforms.
+            </p>
           </div>
         </div>
+      </section>
 
-        <div class="featured__content">
-          <h3 class="card__title" id="featuredTitle">AWS S3 Uploader/Downloader (Windows .exe)</h3>
-
-          <p class="card__text" id="featuredDesc">
-            Desktop tool for uploading/downloading files to Amazon S3, designed as a simple workflow for end users.
-            Backed by serverless AWS services.
-          </p>
-
-          <div class="chips" id="featuredChips" aria-label="Technologies used">
-            <span class="chip">Java</span>
-            <span class="chip">AWS S3</span>
-            <span class="chip">AWS Lambda</span>
-            <span class="chip">API Gateway</span>
-            <span class="chip">IAM</span>
-            <span class="chip">REST</span>
+      <!-- Featured Project -->
+      <section class="section" id="featured" style="padding-top: 12px">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Featured Projects</h2>
+            <p class="section__desc">
+              Here we have a list of projects developed.
+            </p>
           </div>
 
-          <ul class="bullets" id="featuredBullets">
-            <li>Windows executable with a straightforward upload/download experience.</li>
-            <li>Serverless backend to handle requests and integrations.</li>
-            <li>Permissions managed with IAM (least privilege mindset).</li>
-          </ul>
+          <article class="card featured">
+            <div class="featured__grid">
+              <div class="featured__media">
+                <div class="shots">
+                  <img
+                    id="featuredImg"
+                    src="assets/img/aws.JPG"
+                    alt="Featured project screenshot"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
 
-          <div class="cta-row">
-            <a class="btn btn--ghost" id="featuredRepo" href="https://github.com/GeraldoBeiro/AWS_s3_uploader" target="_blank" rel="noreferrer">
-              View Repo
-            </a>
-            <a class="btn btn--primary" id="featuredRelease" href="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0" target="_blank" rel="noreferrer">
-              Download .exe (Release)
-            </a>
-          </div>
+              <div class="featured__content">
+                <h3 class="card__title" id="featuredTitle">
+                  AWS S3 Uploader/Downloader (Windows .exe)
+                </h3>
+
+                <p class="card__text" id="featuredDesc">
+                  Desktop tool for uploading/downloading files to Amazon S3,
+                  designed as a simple workflow for end users. Backed by
+                  serverless AWS services.
+                </p>
+
+                <div
+                  class="chips"
+                  id="featuredChips"
+                  aria-label="Technologies used"
+                >
+                  <span class="chip">Java</span>
+                  <span class="chip">AWS S3</span>
+                  <span class="chip">AWS Lambda</span>
+                  <span class="chip">API Gateway</span>
+                  <span class="chip">IAM</span>
+                  <span class="chip">REST</span>
+                </div>
+
+                <ul class="bullets" id="featuredBullets">
+                  <li>
+                    Windows executable with a straightforward upload/download
+                    experience.
+                  </li>
+                  <li>
+                    Serverless backend to handle requests and integrations.
+                  </li>
+                  <li>
+                    Permissions managed with IAM (least privilege mindset).
+                  </li>
+                </ul>
+
+                <div class="cta-row">
+                  <a
+                    class="btn btn--ghost"
+                    id="featuredRepo"
+                    href="https://github.com/GeraldoBeiro/AWS_s3_uploader"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Repo
+                  </a>
+
+                  <a
+                    class="btn btn--primary"
+                    id="featuredRelease"
+                    href="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Download .exe (Release)
+                  </a>
+
+                  <!-- NEW: Loads jobs from your Firebase API -->
+                  <button
+                    class="btn btn--ghost"
+                    id="featuredLoadJobs"
+                    type="button"
+                    style="display: none"
+                  >
+                    Load jobs
+                  </button>
+                </div>
+
+                <!-- NEW: output area (only used for Firebase project) -->
+                <div id="jobsPanel" style="margin-top: 12px; display: none">
+                  <p id="jobsStatus" class="card__text" style="margin: 0"></p>
+                  <div id="jobsList" style="margin-top: 10px"></div>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
-      </div>
-    </article>
-  </div>
-</section>
-
+      </section>
 
       <!-- Projects grid -->
-      <section class="section" id="projects" style="padding-top: 12px;">
+      <section class="section" id="projects" style="padding-top: 12px">
         <div class="container">
           <div class="section__header">
             <h2 class="section__title">Projects</h2>
-            <p class="section__desc">Deployed projects with clear goals, architecture, and execution.</p>
+            <p class="section__desc">
+              Deployed projects with clear goals, architecture, and execution.
+            </p>
           </div>
 
-<div class="grid-3">
-  <!-- Project 1 -->
-  <article
-    class="card project"
-    data-title="AWS S3 Uploader/Downloader (Windows .exe)"
-    data-desc="Desktop tool for uploading/downloading files to Amazon S3, designed as a simple workflow for end users. Backed by serverless AWS services."
-    data-img="assets/img/aws.JPG"
-    data-chips="Java|AWS S3|AWS Lambda|API Gateway|IAM|REST"
-    data-bullets="Windows executable with a straightforward upload/download experience.|Serverless backend to handle requests and integrations.|Permissions managed with IAM (least privilege mindset)."
-    data-repo="https://github.com/GeraldoBeiro/AWS_s3_uploader"
-    data-release="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0"
-  >
-    <img class="project__thumb" src="assets/img/aws2.JPG" alt="AWS S3 Uploader/Downloader thumbnail" loading="lazy" />
-    <h3 class="card__title">AWS S3 Uploader/Downloader</h3>
-    <p class="card__text">Windows app for S3 uploads/downloads with serverless backend.</p>
-    <div class="chips">
-      <span class="chip">Java</span>
-      <span class="chip">AWS</span>
-      <span class="chip">REST</span>
-    </div>
-    <div class="cta-row cta-row--compact">
-      <a class="btn btn--ghost" href="https://github.com/GeraldoBeiro/AWS_s3_uploader" target="_blank" rel="noreferrer">Repo</a>
-      <a class="btn btn--ghost" href="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0" target="_blank" rel="noreferrer">Release</a>
-    </div>
-  </article>
+          <div class="grid-3">
+            <!-- Project 1 -->
+            <article
+              class="card project"
+              data-title="AWS S3 Uploader/Downloader (Windows .exe)"
+              data-desc="Desktop tool for uploading/downloading files to Amazon S3, designed as a simple workflow for end users. Backed by serverless AWS services."
+              data-img="assets/img/aws.JPG"
+              data-chips="Java|AWS S3|AWS Lambda|API Gateway|IAM|REST"
+              data-bullets="Windows executable with a straightforward upload/download experience.|Serverless backend to handle requests and integrations.|Permissions managed with IAM (least privilege mindset)."
+              data-repo="https://github.com/GeraldoBeiro/AWS_s3_uploader"
+              data-release="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0"
+            >
+              <img
+                class="project__thumb"
+                src="assets/img/aws2.JPG"
+                alt="AWS S3 Uploader/Downloader thumbnail"
+                loading="lazy"
+              />
+              <h3 class="card__title">AWS S3 Uploader/Downloader</h3>
+              <p class="card__text">
+                Windows app for S3 uploads/downloads with serverless backend.
+              </p>
+              <div class="chips">
+                <span class="chip">Java</span>
+                <span class="chip">AWS</span>
+                <span class="chip">REST</span>
+              </div>
+              <div class="cta-row cta-row--compact">
+                <a
+                  class="btn btn--ghost"
+                  href="https://github.com/GeraldoBeiro/AWS_s3_uploader"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repo</a
+                >
+                <a
+                  class="btn btn--ghost"
+                  href="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Release</a
+                >
+              </div>
+            </article>
 
-  <!-- Project 2 -->
-  <article
-    class="card project"
-    data-title="Google Cloud / Firebase Project"
-    data-desc="Project built to strengthen my skills with Firebase, authentication, database workflows, and deploying web apps."
-    data-img="assets/img/firebase.JPG"
-    data-chips="Firebase|Google Cloud|Node.js|API"
-    data-bullets="Implements authentication and secure access patterns.|Uses cloud database and structured data flows.|Focuses on deployment, monitoring, and practical usability."
-    data-repo="#"
-    data-release="#"
-  >
-    <img class="project__thumb" src="assets/img/firebase.JPG" alt="Firebase project thumbnail" loading="lazy" />
-    <h3 class="card__title">Google Cloud / Firebase Project</h3>
-    <p class="card__text">One sentence problem + one sentence solution.</p>
-    <div class="chips">
-      <span class="chip">Node.js</span>
-      <span class="chip">SQL</span>
-      <span class="chip">API</span>
-    </div>
-    <div class="cta-row cta-row--compact">
-      <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Repo</a>
-      <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Live</a>
-    </div>
-  </article>
+            <!-- Project 2 -->
+            <article
+              class="card project"
+              data-title="Google Cloud / Firebase Project"
+              data-desc="Project built to strengthen my skills with Firebase, authentication, database workflows, and deploying web apps."
+              data-img="assets/img/firebase.JPG"
+              data-chips="Firebase|Google Cloud|Node.js|API"
+              data-bullets="Implements authentication and secure access patterns.|Uses cloud database and structured data flows.|Focuses on deployment, monitoring, and practical usability."
+              data-repo="#"
+              data-release="#"
+            >
+              <img
+                class="project__thumb"
+                src="assets/img/firebase.JPG"
+                alt="Firebase project thumbnail"
+                loading="lazy"
+              />
+              <h3 class="card__title">Google Cloud / Firebase Project</h3>
+              <p class="card__text">
+                One sentence problem + one sentence solution.
+              </p>
+              <div class="chips">
+                <span class="chip">Node.js</span>
+                <span class="chip">SQL</span>
+                <span class="chip">API</span>
+              </div>
+              <div class="cta-row cta-row--compact">
+                <a
+                  class="btn btn--ghost"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repo</a
+                >
+                <a
+                  class="btn btn--ghost"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Live</a
+                >
+              </div>
+            </article>
 
-  <!-- Project 3 -->
-  <article
-    class="card project"
-    data-title="Microsoft Azure Project"
-    data-desc="Project built to strengthen my knowledge of Azure services, cloud deployment, and backend integration patterns."
-    data-img="assets/img/azure.JPG"
-    data-chips="Azure|Python|REST|Git"
-    data-bullets="Builds an API-driven workflow with clear inputs and outputs.|Focuses on deployment and cloud service integration.|Emphasizes clean structure, documentation, and repeatability."
-    data-repo="#"
-    data-release="#"
-  >
-    <img class="project__thumb" src="assets/img/azure.JPG" alt="Azure project thumbnail" loading="lazy" />
-    <h3 class="card__title">Microsoft Azure Project</h3>
-    <p class="card__text">One sentence problem + one sentence solution.</p>
-    <div class="chips">
-      <span class="chip">Python</span>
-      <span class="chip">REST</span>
-      <span class="chip">Git</span>
-    </div>
-    <div class="cta-row cta-row--compact">
-      <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Repo</a>
-      <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Demo</a>
-    </div>
-  </article>
-</div>
-
+            <!-- Project 3 -->
+            <article
+              class="card project"
+              data-title="Microsoft Azure Project"
+              data-desc="Project built to strengthen my knowledge of Azure services, cloud deployment, and backend integration patterns."
+              data-img="assets/img/azure.JPG"
+              data-chips="Azure|Python|REST|Git"
+              data-bullets="Builds an API-driven workflow with clear inputs and outputs.|Focuses on deployment and cloud service integration.|Emphasizes clean structure, documentation, and repeatability."
+              data-repo="#"
+              data-release="#"
+            >
+              <img
+                class="project__thumb"
+                src="assets/img/azure.JPG"
+                alt="Azure project thumbnail"
+                loading="lazy"
+              />
+              <h3 class="card__title">Microsoft Azure Project</h3>
+              <p class="card__text">
+                One sentence problem + one sentence solution.
+              </p>
+              <div class="chips">
+                <span class="chip">Python</span>
+                <span class="chip">REST</span>
+                <span class="chip">Git</span>
+              </div>
+              <div class="cta-row cta-row--compact">
+                <a
+                  class="btn btn--ghost"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Repo</a
+                >
+                <a
+                  class="btn btn--ghost"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Demo</a
+                >
+              </div>
+            </article>
+          </div>
         </div>
       </section>
     </main>
@@ -210,7 +328,10 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer__inner">
-        <p>© <span id="year"></span> Geraldo Beiro • Software Developer, Toronto, Canada</p>
+        <p>
+          © <span id="year"></span> Geraldo Beiro • Software Developer, Toronto,
+          Canada
+        </p>
       </div>
     </footer>
 

@@ -92,7 +92,9 @@
         // pick the most visible section
         const visible = entries
           .filter((en) => en.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];
+          .sort(
+            (a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0),
+          )[0];
 
         if (visible && visible.target && visible.target.id) {
           setActiveLink(visible.target.id);
@@ -101,14 +103,14 @@
       {
         root: null,
         threshold: [0.2, 0.35, 0.5, 0.65],
-      }
+      },
     );
 
     sections.forEach((sec) => observer.observe(sec));
   }
 
   //here we have the changing feature project
-    /* =========================
+  /* =========================
      Featured project switcher (projects.html)
      - Click a project card -> update Featured section
      - Ignore clicks on buttons/links inside the card
@@ -126,6 +128,8 @@
     const featuredBullets = document.getElementById("featuredBullets");
     const featuredRepo = document.getElementById("featuredRepo");
     const featuredRelease = document.getElementById("featuredRelease");
+    const featuredLoadJobs = document.getElementById("featuredLoadJobs");
+    const jobsPanel = document.getElementById("jobsPanel");
 
     projectCards.forEach((card) => {
       card.addEventListener("click", (e) => {
@@ -134,10 +138,29 @@
         if (clickedInteractive) return;
 
         const title = card.dataset.title || "";
+        // Show Load Jobs button ONLY for Firebase project
+        const isFirebaseProject = title.toLowerCase().includes("firebase");
+
+        if (featuredLoadJobs && jobsPanel) {
+          if (isFirebaseProject) {
+            featuredLoadJobs.style.display = "inline-block";
+            jobsPanel.style.display = "block";
+          } else {
+            featuredLoadJobs.style.display = "none";
+            jobsPanel.style.display = "none";
+          }
+        }
+
         const desc = card.dataset.desc || "";
         const img = card.dataset.img || "";
-        const chips = (card.dataset.chips || "").split("|").map((x) => x.trim()).filter(Boolean);
-        const bullets = (card.dataset.bullets || "").split("|").map((x) => x.trim()).filter(Boolean);
+        const chips = (card.dataset.chips || "")
+          .split("|")
+          .map((x) => x.trim())
+          .filter(Boolean);
+        const bullets = (card.dataset.bullets || "")
+          .split("|")
+          .map((x) => x.trim())
+          .filter(Boolean);
         const repo = card.dataset.repo || "#";
         const release = card.dataset.release || "#";
 
@@ -175,6 +198,45 @@
         featuredEl.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
-  }
+    // =========================
+// Firebase "Load jobs" button (public GET)
+// =========================
+const API_BASE = "https://us-central1-cloudjobtrackerapi.cloudfunctions.net/api";
 
+if (featuredLoadJobs) {
+  featuredLoadJobs.addEventListener("click", async () => {
+    const statusEl = document.getElementById("jobsStatus");
+    const listEl = document.getElementById("jobsList");
+
+    if (!statusEl || !listEl) return;
+
+    statusEl.textContent = "Loading jobs...";
+    listEl.innerHTML = "";
+
+    try {
+      const res = await fetch(`${API_BASE}/jobs`);
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+
+      const jobs = await res.json();
+      statusEl.textContent = jobs.length ? `Loaded ${jobs.length} job(s).` : "No jobs found.";
+
+      // simple rendering (no styling changes)
+      jobs.forEach((job) => {
+        const item = document.createElement("div");
+        item.style.marginBottom = "10px";
+        item.innerHTML = `
+          <strong>${job.title ?? "Untitled"}</strong><br/>
+          <span>${job.description ?? ""}</span><br/>
+          <small>Status: ${job.status ?? "n/a"}</small>
+        `;
+        listEl.appendChild(item);
+      });
+    } catch (err) {
+      statusEl.textContent = "Failed to load jobs.";
+      listEl.textContent = String(err);
+    }
+  });
+}
+
+  }
 })();
