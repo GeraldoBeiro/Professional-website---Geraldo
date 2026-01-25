@@ -5,13 +5,13 @@
   --bg: #ffffff;
   --panel: #f6f8fc;
   --card: #ffffff;
-  --text: #0f172a;         /* slate-900 */
-  --muted: #475569;        /* slate-600 */
-  --border: #e2e8f0;       /* slate-200 */
+  --text: #0f172a; /* slate-900 */
+  --muted: #475569; /* slate-600 */
+  --border: #e2e8f0; /* slate-200 */
   --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
 
-  --primary: #1d4ed8;      /* blue-700 */
-  --primary-2: #2563eb;    /* blue-600 */
+  --primary: #1d4ed8; /* blue-700 */
+  --primary-2: #2563eb; /* blue-600 */
   --primary-contrast: #ffffff;
 
   --radius: 16px;
@@ -26,7 +26,8 @@
   --gap-5: 32px;
   --gap-6: 48px;
 
-  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+  --font:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
     "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
 }
 
@@ -70,17 +71,16 @@ ul {
   font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.02em;
- 
 }
-h1.hero__title{
-    color: #0f3397;
+h1.hero__title {
+  color: #2b2b2b;
 }
-p.eyebrow{
-    font-size: 19px;
+p.eyebrow {
+  font-size: 19px;
 }
-p.hero__subtitle{
-    color:#1741b6;
-    font-family: Arial, Helvetica, sans-serif;
+p.hero__subtitle {
+  color: #2b2b2b;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .section--page-intro {
   padding-top: 40px;
@@ -94,6 +94,7 @@ p.hero__subtitle{
 
 .section {
   padding: 56px 0;
+  background: linear-gradient(90deg, #d7e2ee 0%, #ffffff 50%, #d7e2ee 100%);
 }
 
 .section__header {
@@ -206,8 +207,11 @@ p.hero__subtitle{
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
-  transition: transform 0.08s ease, background-color 0.15s ease,
-    border-color 0.15s ease, opacity 0.15s ease;
+  transition:
+    transform 0.08s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
   user-select: none;
 }
 
@@ -248,12 +252,7 @@ p.hero__subtitle{
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(
-    90deg,
-    #e2ecf0 0%,
-    #ffffff 50%,
-    #e2ecf0 100%
-  );
+  background: linear-gradient(90deg, #e2ecf0 0%, #ffffff 50%, #e2ecf0 100%);
 }
 
 .header__inner {
@@ -287,15 +286,14 @@ p.hero__subtitle{
 }
 
 .nav {
-
-    position: relative;
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .nav__list {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
   list-style: none;
   display: flex;
   gap: 14px;
@@ -338,17 +336,13 @@ p.hero__subtitle{
   margin: 0;
 }
 
-
 /* =========================
    Hero
 ========================= */
 .hero {
   padding-top: 44px;
   padding-bottom: 56px;
-  background:
-    radial-gradient(900px 500px at 10% 10%, #dbeafe 0%, transparent 60%),
-    radial-gradient(900px 500px at 90% 20%, #e0f2fe 0%, transparent 55%),
-    linear-gradient(180deg, #f8fafc 0%, #ffffff 45%);
+  background: linear-gradient(90deg, #d7e2ee 0%, #ffffff 50%, #d7e2ee 100%);
   border-bottom: 1px solid var(--border);
 }
 
@@ -399,7 +393,7 @@ p.hero__subtitle{
    Featured Project
 ========================= */
 .featured {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);    
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 
 .featured__grid {
@@ -477,12 +471,11 @@ p.hero__subtitle{
 }*/
 
 .projects-page {
-background:
+  background:
     radial-gradient(900px 500px at 10% 10%, #e5effc 0%, transparent 60%),
     radial-gradient(900px 500px at 90% 20%, #ebf6fd 0%, transparent 55%),
     linear-gradient(180deg, #f8fafc 0%, #e5effc 45%);
 }
-
 
 /* =========================
    About / Contact split
@@ -490,12 +483,11 @@ background:
 
 /*.cont-container .card {
   background: linear-gradient(180deg, #d1eaf3, #cdd1da);*/
-    /*background:
+/*background:
     radial-gradient(900px 500px at 10% 10%, #e5effc 0%, transparent 60%),
     radial-gradient(900px 500px at 90% 20%, #ebf6fd 0%, transparent 55%),
     linear-gradient(180deg, #f8fafc 0%, #ffffff 45%);
 }*/
-
 
 .split {
   display: grid;
@@ -634,7 +626,6 @@ background:
   }
 }
 
-
 /* =========================
    Reduced motion
 ========================= */
@@ -655,8 +646,3 @@ background:
   background: #eaf2ff;
   color: #1d4ed8;
 }
-
-
-
-
-
