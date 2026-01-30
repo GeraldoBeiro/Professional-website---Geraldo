@@ -145,6 +145,19 @@ p.hero__subtitle {
   box-shadow: var(--shadow);
   padding: 18px;
 }
+/* Here I created a different type of card, to give more visual variety to the website*/
+
+.card_2{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0%;
+  box-shadow: #0f172a;
+  padding: 8px;
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-color: #a1a9bb;
+  color: #161313;
+}
 
 .card__title {
   margin: 0;
@@ -155,6 +168,12 @@ p.hero__subtitle {
 .card__text {
   margin: 8px 0 0;
   color: var(--muted);
+}
+/* Also here for visual effects*/
+.card__text_2{
+    margin: 8px 0 0;
+    color: #000000;
+
 }
 
 .bullets {
