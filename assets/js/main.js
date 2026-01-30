@@ -4,6 +4,9 @@
    - Close nav on link click
    - Footer year
    - Optional: active section highlight (scroll spy)
+   - Featured project switcher (projects.html)
+   - Firebase Load Jobs (projects.html)
+   - Cookie consent (simple)
 ========================= */
 
 (function () {
@@ -18,17 +21,19 @@
   const navList = document.getElementById("navList");
 
   function openMenu() {
+    if (!navList || !toggleBtn) return;
     navList.classList.add("is-open");
     toggleBtn.setAttribute("aria-expanded", "true");
   }
 
   function closeMenu() {
+    if (!navList || !toggleBtn) return;
     navList.classList.remove("is-open");
     toggleBtn.setAttribute("aria-expanded", "false");
   }
 
   function isMenuOpen() {
-    return navList.classList.contains("is-open");
+    return !!navList && navList.classList.contains("is-open");
   }
 
   if (toggleBtn && navList) {
@@ -48,6 +53,7 @@
     // Close menu when clicking outside (mobile)
     document.addEventListener("click", (e) => {
       const target = e.target;
+      if (!target) return;
 
       const clickedToggle = toggleBtn.contains(target);
       const clickedMenu = navList.contains(target);
@@ -125,8 +131,8 @@
     const featuredRelease = document.getElementById("featuredRelease");
     const featuredLoadJobs = document.getElementById("featuredLoadJobs");
     const jobsPanel = document.getElementById("jobsPanel");
-    // Initialize Featured CTA based on current Featured title (page load)
 
+    // Initialize Featured CTA based on current Featured title (page load)
     (function initFeaturedCTA() {
       const currentTitle = (featuredTitle?.textContent || "").toLowerCase();
       const isFirebase = currentTitle.includes("firebase");
@@ -266,5 +272,36 @@
         }
       });
     }
+  }
+
+  // =========================
+  // Cookie consent (simple)
+  // =========================
+  const banner = document.getElementById("cookieBanner");
+  const acceptBtn = document.getElementById("cookieAccept");
+  const rejectBtn = document.getElementById("cookieReject");
+  const prefsBtn = document.getElementById("cookiePrefsBtn");
+
+  if (banner && acceptBtn && rejectBtn) {
+    const KEY = "cookie_consent";
+
+    // initial state
+    if (localStorage.getItem(KEY)) banner.setAttribute("hidden", "");
+    else banner.removeAttribute("hidden");
+
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem(KEY, "accepted");
+      banner.setAttribute("hidden", "");
+    });
+
+    rejectBtn.addEventListener("click", () => {
+      localStorage.setItem(KEY, "rejected");
+      banner.setAttribute("hidden", "");
+    });
+
+    prefsBtn?.addEventListener("click", () => {
+      localStorage.removeItem(KEY);
+      banner.removeAttribute("hidden");
+    });
   }
 })();

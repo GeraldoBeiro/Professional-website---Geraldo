@@ -239,14 +239,31 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="container footer__inner">
-        <p>
-          © <span id="year"></span> Geraldo Beiro • Software Developer, Toronto,
-          Canada
-        </p>
-      </div>
-    </footer>
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© <span id="year"></span> Geraldo Beiro • Toronto, Canada</p>
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <a class="link" href="privacy.html">Privacy</a>
+      <a class="link" href="cookies.html">Cookies</a>
+      <button class="link" id="cookiePrefsBtn" type="button" style="background:none;border:none;padding:0;cursor:pointer;">
+        Cookie preferences
+      </button>
+    </div>
+  </div>
+</footer>
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie notice" hidden>
+  <div class="cookie-banner__inner">
+    <p class="cookie-banner__text">
+      This site uses cookies only for basic functionality and (optional) analytics. You can accept or reject analytics cookies.
+    </p>
+    <div class="cookie-banner__actions">
+      <button class="btn btn--ghost" id="cookieReject" type="button">Reject</button>
+      <button class="btn btn--primary" id="cookieAccept" type="button">Accept</button>
+    </div>
+  </div>
+</div>
+
+
 
     <script src="assets/js/main.js" defer></script>
   </body>

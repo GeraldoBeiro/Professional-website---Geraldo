@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/img/favicon.png" type="image/png">
+    <link rel="icon" href="assets/img/favicon.png" type="image/png" />
     <meta
       name="description"
       content="Projects by Geraldo Beiro — Junior Developer in Toronto."
@@ -82,7 +82,7 @@
           <div class="section__header">
             <h2 class="section__title">Featured Projects</h2>
             <p class="section__desc">
-              Here we have a list of projects developed.
+              Selected projects with clear goals, architecture, and results.
             </p>
           </div>
 
@@ -298,9 +298,7 @@
                 loading="lazy"
               />
               <h3 class="card__title">Microsoft Azure Project</h3>
-              <p class="card__text">
-                Upcoming Project - in development.
-              </p>
+              <p class="card__text">Upcoming Project - in development.</p>
               <div class="chips">
                 <span class="chip">Python</span>
                 <span class="chip">REST</span>
@@ -331,12 +329,44 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer__inner">
-        <p>
-          © <span id="year"></span> Geraldo Beiro • Software Developer, Toronto,
-          Canada
-        </p>
+        <p>© <span id="year"></span> Geraldo Beiro • Toronto, Canada</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a class="link" href="privacy.html">Privacy</a>
+          <a class="link" href="cookies.html">Cookies</a>
+          <button
+            class="link"
+            id="cookiePrefsBtn"
+            type="button"
+            style="background: none; border: none; padding: 0; cursor: pointer"
+          >
+            Cookie preferences
+          </button>
+        </div>
       </div>
     </footer>
+    <div
+      class="cookie-banner"
+      id="cookieBanner"
+      role="dialog"
+      aria-live="polite"
+      aria-label="Cookie notice"
+      hidden
+    >
+      <div class="cookie-banner__inner">
+        <p class="cookie-banner__text">
+          This site uses cookies only for basic functionality and (optional)
+          analytics. You can accept or reject analytics cookies.
+        </p>
+        <div class="cookie-banner__actions">
+          <button class="btn btn--ghost" id="cookieReject" type="button">
+            Reject
+          </button>
+          <button class="btn btn--primary" id="cookieAccept" type="button">
+            Accept
+          </button>
+        </div>
+      </div>
+    </div>
 
     <script src="assets/js/main.js" defer></script>
   </body>

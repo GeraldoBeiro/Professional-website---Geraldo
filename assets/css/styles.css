@@ -646,3 +646,44 @@ p.hero__subtitle {
   background: #eaf2ff;
   color: #1d4ed8;
 }
+
+
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 0 12px;
+}
+
+.cookie-banner__inner {
+  width: min(100%, 980px);
+  background: #12192b; /* slate-900 */
+  border: 1px solid #1e293b; /* slate-800 */
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(2,6,23,0.5);
+  padding: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cookie-banner__text {
+  color: #e5e7eb; /* light text */
+}
+
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 10px;
+}
+/* Ensure the hidden attribute always wins */
+.cookie-banner[hidden] {
+  display: none !important;
+}
+
