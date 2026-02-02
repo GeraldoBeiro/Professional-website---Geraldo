@@ -24,7 +24,7 @@
   </head>
 
   <body class="projects-page">
-    <!-- Header / Nav (same behavior + mobile menu) -->
+    <!-- Header / Nav -->
     <header class="header" id="top">
       <div class="container header__inner">
         <a class="logo" href="index.html" aria-label="Go to home">
@@ -110,11 +110,7 @@
                   serverless AWS services.
                 </p>
 
-                <div
-                  class="chips"
-                  id="featuredChips"
-                  aria-label="Technologies used"
-                >
+                <div class="chips" id="featuredChips" aria-label="Technologies used">
                   <span class="chip">Java</span>
                   <span class="chip">AWS S3</span>
                   <span class="chip">AWS Lambda</span>
@@ -124,24 +120,16 @@
                 </div>
 
                 <ul class="bullets" id="featuredBullets">
-                  <li>
-                    Windows executable with a straightforward upload/download
-                    experience.
-                  </li>
-                  <li>
-                    Serverless backend to handle requests and integrations.
-                  </li>
-                  <li>
-                    Permissions managed with IAM (least privilege mindset).
-                  </li>
+                  <li>Windows executable with a straightforward upload/download experience.</li>
+                  <li>Serverless backend to handle requests and integrations.</li>
+                  <li>Permissions managed with IAM (least privilege mindset).</li>
                 </ul>
 
-                <!-- UPDATED CTA: remove View Repo + Download buttons, keep only Load jobs (shown only for Firebase project) -->
                 <div class="cta-row">
                   <a
                     class="btn btn--ghost"
                     id="featuredRepo"
-                    href="https://github.com/GeraldoBeiro/AWS_s3_uploader"
+                    href="#"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -150,12 +138,12 @@
 
                   <a
                     class="btn btn--primary"
-                    id="featuredRelease"
-                    href="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0"
+                    id="featuredPrimary"
+                    href="#"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Download .exe (Release)
+                    Download (Release)
                   </a>
 
                   <button
@@ -168,7 +156,6 @@
                   </button>
                 </div>
 
-                <!-- Jobs output panel (only used for Firebase project) -->
                 <div id="jobsPanel" style="margin-top: 12px; display: none">
                   <p id="jobsStatus" class="card__text" style="margin: 0"></p>
                   <div id="jobsList" style="margin-top: 10px"></div>
@@ -190,7 +177,7 @@
           </div>
 
           <div class="grid-3">
-            <!-- Project 1 -->
+            <!-- Project 1 (AWS) -->
             <article
               class="card project"
               data-title="AWS S3 Uploader/Downloader (Windows .exe)"
@@ -199,7 +186,8 @@
               data-chips="Java|AWS S3|AWS Lambda|API Gateway|IAM|REST"
               data-bullets="Windows executable with a straightforward upload/download experience.|Serverless backend to handle requests and integrations.|Permissions managed with IAM (least privilege mindset)."
               data-repo="https://github.com/GeraldoBeiro/AWS_s3_uploader"
-              data-release="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0"
+              data-primary="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0"
+              data-primary-label="Download .exe (Release)"
             >
               <img
                 class="project__thumb"
@@ -217,24 +205,12 @@
                 <span class="chip">REST</span>
               </div>
               <div class="cta-row cta-row--compact">
-                <a
-                  class="btn btn--ghost"
-                  href="https://github.com/GeraldoBeiro/AWS_s3_uploader"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Repo</a
-                >
-                <a
-                  class="btn btn--ghost"
-                  href="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Release</a
-                >
+                <a class="btn btn--ghost" href="https://github.com/GeraldoBeiro/AWS_s3_uploader" target="_blank" rel="noreferrer">Repo</a>
+                <a class="btn btn--ghost" href="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.0" target="_blank" rel="noreferrer">Release</a>
               </div>
             </article>
 
-            <!-- Project 2 (UPDATED COPY) -->
+            <!-- Project 2 (Firebase) -->
             <article
               class="card project"
               data-title="Cloud Job Tracker API (Firebase + Google Cloud)"
@@ -243,7 +219,8 @@
               data-chips="Firebase|Google Cloud|Node.js|Cloud Functions|Firestore|REST API|Authentication"
               data-bullets="Public read-only API endpoints for recruiters and demos.|Authenticated write access using Firebase Authentication and ID tokens.|Serverless REST API built with Node.js, Cloud Functions (Gen 2), and Firestore.|Designed with security, CORS, and real-world deployment considerations."
               data-repo="#"
-              data-release="#"
+              data-primary="#"
+              data-primary-label="View Demo"
             >
               <img
                 class="project__thumb"
@@ -251,7 +228,6 @@
                 alt="Firebase project thumbnail"
                 loading="lazy"
               />
-
               <h3 class="card__title">Cloud Job Tracker API</h3>
               <p class="card__text">
                 Serverless REST API demonstrating secure cloud data access using
@@ -263,69 +239,50 @@
                 <span class="chip">Node.js</span>
               </div>
               <div class="cta-row cta-row--compact">
-                <a
-                  class="btn btn--ghost"
-                  href="#"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Repo</a
-                >
-                <a
-                  class="btn btn--ghost"
-                  href="#"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Live</a
-                >
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Repo</a>
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Live</a>
               </div>
             </article>
 
-            <!-- Project 3 -->
+            <!-- Project 3 (Gemini - DEFAULT FEATURED) -->
             <article
               class="card project"
-              data-title="Microsoft Azure Project"
-              data-desc="Project built to strengthen my knowledge of Azure services, cloud deployment, and backend integration patterns."
-              data-img="assets/img/azure.JPG"
-              data-chips="Azure|Python|REST|Git"
-              data-bullets="Builds an API-driven workflow with clear inputs and outputs.|Focuses on deployment and cloud service integration.|Emphasizes clean structure, documentation, and repeatability."
-              data-repo="#"
-              data-release="#"
+              data-default="true"
+              data-title="Google Gemini — Resume & Job Match Analyzer"
+              data-desc="AI-powered resume analysis using Google Gemini to compare a resume against job requirements, returning structured feedback and improvement suggestions. Includes a cloud-backed API workflow."
+              data-img="assets/img/app_screen.JPG"
+              data-chips="Google Gemini|AI|Node.js|REST|Firebase|Cloud Functions"
+              data-bullets="Uses Gemini to extract and compare key skills against job requirements.|Exposes a clean API-driven workflow with clear inputs/outputs.|Focuses on deployment, security mindset, and maintainable project structure."
+              data-repo="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.2"
+              data-primary="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.2"
+              data-primary-label="Download (Release)"
             >
               <img
                 class="project__thumb"
-                src="assets/img/azure.JPG"
-                alt="Azure project thumbnail"
+                src="assets/img/gemini.JPG"
+                alt="Google Gemini project thumbnail"
                 loading="lazy"
               />
-              <h3 class="card__title">Microsoft Azure Project</h3>
-              <p class="card__text">Upcoming Project - in development.</p>
+              <h3 class="card__title">Google Gemini — Resume Analyzer</h3>
+              <p class="card__text">
+                AI resume analysis + job matching workflow using Gemini and a
+                cloud backend.
+              </p>
               <div class="chips">
-                <span class="chip">Python</span>
+                <span class="chip">Gemini</span>
+                <span class="chip">Node.js</span>
                 <span class="chip">REST</span>
-                <span class="chip">Git</span>
               </div>
               <div class="cta-row cta-row--compact">
-                <a
-                  class="btn btn--ghost"
-                  href="#"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Repo</a
-                >
-                <a
-                  class="btn btn--ghost"
-                  href="#"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Demo</a
-                >
+                <a class="btn btn--ghost" href="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.2" target="_blank" rel="noreferrer">Repo</a>
+                <a class="btn btn--ghost" href="https://github.com/GeraldoBeiro/AWS_s3_uploader/releases/tag/v1.0.2" target="_blank" rel="noreferrer">Release</a>
               </div>
             </article>
           </div>
         </div>
       </section>
     </main>
-    <!--test-->
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer__inner">
@@ -344,6 +301,7 @@
         </div>
       </div>
     </footer>
+
     <div
       class="cookie-banner"
       id="cookieBanner"

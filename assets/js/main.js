@@ -42,7 +42,6 @@
       else openMenu();
     });
 
-    // Close menu when clicking a nav link (mobile)
     navList.addEventListener("click", (e) => {
       const target = e.target;
       if (target && target.matches && target.matches("a.nav__link")) {
@@ -50,7 +49,6 @@
       }
     });
 
-    // Close menu when clicking outside (mobile)
     document.addEventListener("click", (e) => {
       const target = e.target;
       if (!target) return;
@@ -63,7 +61,6 @@
       }
     });
 
-    // Close menu on ESC
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && isMenuOpen()) closeMenu();
     });
@@ -94,17 +91,14 @@
         const visible = entries
           .filter((en) => en.isIntersecting)
           .sort(
-            (a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0),
+            (a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0)
           )[0];
 
         if (visible && visible.target && visible.target.id) {
           setActiveLink(visible.target.id);
         }
       },
-      {
-        root: null,
-        threshold: [0.2, 0.35, 0.5, 0.65],
-      },
+      { root: null, threshold: [0.2, 0.35, 0.5, 0.65] }
     );
 
     sections.forEach((sec) => observer.observe(sec));
@@ -112,15 +106,14 @@
 
   /* =========================
      Featured project switcher (projects.html)
-     - Click a project card -> update Featured section
-     - Ignore clicks on buttons/links inside the card
   ========================= */
 
   const featuredEl = document.getElementById("featured");
   const projectCards = document.querySelectorAll(".project");
 
-  // Only run on pages that actually have Featured + projects grid
-  if (featuredEl && projectCards.length) {
+  function updateFeaturedFromCard(card) {
+    if (!card) return;
+
     const featuredTitle = document.getElementById("featuredTitle");
     const featuredDesc = document.getElementById("featuredDesc");
     const featuredImg = document.getElementById("featuredImg");
@@ -128,112 +121,102 @@
     const featuredBullets = document.getElementById("featuredBullets");
 
     const featuredRepo = document.getElementById("featuredRepo");
-    const featuredRelease = document.getElementById("featuredRelease");
+    const featuredPrimary = document.getElementById("featuredPrimary");
     const featuredLoadJobs = document.getElementById("featuredLoadJobs");
     const jobsPanel = document.getElementById("jobsPanel");
 
-    // Initialize Featured CTA based on current Featured title (page load)
-    (function initFeaturedCTA() {
-      const currentTitle = (featuredTitle?.textContent || "").toLowerCase();
-      const isFirebase = currentTitle.includes("firebase");
+    const title = card.dataset.title || "";
+    const isFirebaseProject = title.toLowerCase().includes("firebase");
 
-      if (featuredRepo && featuredRelease && featuredLoadJobs && jobsPanel) {
-        if (isFirebase) {
-          featuredRepo.style.display = "none";
-          featuredRelease.style.display = "none";
-          featuredLoadJobs.style.display = "inline-block";
-          jobsPanel.style.display = "block";
-        } else {
-          featuredRepo.style.display = "inline-block";
-          featuredRelease.style.display = "inline-block";
-          featuredLoadJobs.style.display = "none";
-          jobsPanel.style.display = "none";
-        }
+    const desc = card.dataset.desc || "";
+    const img = card.dataset.img || "";
+
+    const chips = (card.dataset.chips || "")
+      .split("|")
+      .map((x) => x.trim())
+      .filter(Boolean);
+
+    const bullets = (card.dataset.bullets || "")
+      .split("|")
+      .map((x) => x.trim())
+      .filter(Boolean);
+
+    const repo = card.dataset.repo || "#";
+    const primaryHref = card.dataset.primary || "#";
+    const primaryLabel = card.dataset.primaryLabel || "View Demo";
+
+    // Text
+    if (featuredTitle) featuredTitle.textContent = title;
+    if (featuredDesc) featuredDesc.textContent = desc;
+
+    // Image
+    if (featuredImg && img) {
+      featuredImg.src = img;
+      featuredImg.alt = title || "Featured project image";
+    }
+
+    // Chips
+    if (featuredChips) {
+      featuredChips.innerHTML = "";
+      chips.forEach((c) => {
+        const span = document.createElement("span");
+        span.className = "chip";
+        span.textContent = c;
+        featuredChips.appendChild(span);
+      });
+    }
+
+    // Bullets
+    if (featuredBullets) {
+      featuredBullets.innerHTML = "";
+      bullets.forEach((b) => {
+        const li = document.createElement("li");
+        li.textContent = b;
+        featuredBullets.appendChild(li);
+      });
+    }
+
+    // CTA logic
+    if (featuredRepo) {
+      featuredRepo.href = repo;
+      featuredRepo.style.display = isFirebaseProject ? "none" : "inline-flex";
+    }
+
+    if (featuredPrimary) {
+      featuredPrimary.href = primaryHref;
+      featuredPrimary.textContent = primaryLabel;
+      featuredPrimary.style.display = isFirebaseProject ? "none" : "inline-flex";
+    }
+
+    if (featuredLoadJobs && jobsPanel) {
+      if (isFirebaseProject) {
+        featuredLoadJobs.style.display = "inline-flex";
+        jobsPanel.style.display = "block";
+      } else {
+        featuredLoadJobs.style.display = "none";
+        jobsPanel.style.display = "none";
       }
-    })();
+    }
+  }
+
+  if (featuredEl && projectCards.length) {
+    // Load default project on page load (Gemini)
+    const defaultCard =
+      document.querySelector('.project[data-default="true"]') || projectCards[0];
+    updateFeaturedFromCard(defaultCard);
 
     projectCards.forEach((card) => {
       card.addEventListener("click", (e) => {
-        // If user clicked a link/button inside the card, don't hijack it
         const clickedInteractive = e.target.closest("a, button");
         if (clickedInteractive) return;
 
-        const title = card.dataset.title || "";
-        const isFirebaseProject = title.toLowerCase().includes("firebase");
-
-        const desc = card.dataset.desc || "";
-        const img = card.dataset.img || "";
-        const chips = (card.dataset.chips || "")
-          .split("|")
-          .map((x) => x.trim())
-          .filter(Boolean);
-        const bullets = (card.dataset.bullets || "")
-          .split("|")
-          .map((x) => x.trim())
-          .filter(Boolean);
-        const repo = card.dataset.repo || "#";
-        const release = card.dataset.release || "#";
-
-        // Update Featured text
-        if (featuredTitle) featuredTitle.textContent = title;
-        if (featuredDesc) featuredDesc.textContent = desc;
-
-        // Update Featured image
-        if (featuredImg && img) {
-          featuredImg.src = img;
-          featuredImg.alt = title || "Featured project image";
-        }
-
-        // Update Featured chips
-        if (featuredChips) {
-          featuredChips.innerHTML = "";
-          chips.forEach((c) => {
-            const span = document.createElement("span");
-            span.className = "chip";
-            span.textContent = c;
-            featuredChips.appendChild(span);
-          });
-        }
-
-        // Update Featured bullets
-        if (featuredBullets) {
-          featuredBullets.innerHTML = "";
-          bullets.forEach((b) => {
-            const li = document.createElement("li");
-            li.textContent = b;
-            featuredBullets.appendChild(li);
-          });
-        }
-
-        // Toggle CTA buttons + jobs panel
-        if (featuredRepo && featuredRelease && featuredLoadJobs && jobsPanel) {
-          if (isFirebaseProject) {
-            // Firebase: show Load Jobs + panel
-            featuredRepo.style.display = "none";
-            featuredRelease.style.display = "none";
-            featuredLoadJobs.style.display = "inline-block";
-            jobsPanel.style.display = "block";
-          } else {
-            // Other projects: show Repo + Download, hide jobs UI
-            featuredRepo.style.display = "inline-block";
-            featuredRelease.style.display = "inline-block";
-            featuredLoadJobs.style.display = "none";
-            jobsPanel.style.display = "none";
-
-            // Only set links for non-Firebase projects
-            featuredRepo.href = repo;
-            featuredRelease.href = release;
-          }
-        }
-
-        // Smooth scroll to featured
+        updateFeaturedFromCard(card);
         featuredEl.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
 
-    // =========================
-    // Firebase "Load jobs" button (public GET)
-    // =========================
+    // Firebase Load Jobs button
+    const featuredLoadJobs = document.getElementById("featuredLoadJobs");
     const API_BASE =
       "https://us-central1-cloudjobtrackerapi.cloudfunctions.net/api";
 
@@ -285,7 +268,6 @@
   if (banner && acceptBtn && rejectBtn) {
     const KEY = "cookie_consent";
 
-    // initial state
     if (localStorage.getItem(KEY)) banner.setAttribute("hidden", "");
     else banner.removeAttribute("hidden");
 
@@ -305,3 +287,4 @@
     });
   }
 })();
+
