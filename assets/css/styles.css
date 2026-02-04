@@ -94,7 +94,7 @@ p.hero__subtitle {
 
 .section {
   padding: 56px 0;
-  background: linear-gradient(90deg, #d7e2ee 0%, #ffffff 50%, #d7e2ee 100%);
+  background: linear-gradient(90deg, #d4cef0 0%, #dafcfc 50%, #d4cef0 100%);
 }
 
 .section__header {
@@ -150,7 +150,7 @@ p.hero__subtitle {
 .card_2{
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 0%;
+  border-radius: 2dvb;
   box-shadow: #0f172a;
   padding: 8px;
   background-color: rgb(255, 255, 255);
@@ -271,7 +271,7 @@ p.hero__subtitle {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(90deg, #e2ecf0 0%, #ffffff 50%, #e2ecf0 100%);
+  background: linear-gradient(90deg, #d4cef0 0%, #dafcfc 50%, #d4cef0 100%);
 }
 
 .header__inner {
@@ -361,8 +361,8 @@ p.hero__subtitle {
 .hero {
   padding-top: 44px;
   padding-bottom: 56px;
-  background: linear-gradient(90deg, #d7e2ee 0%, #ffffff 50%, #d7e2ee 100%);
-  border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, #d4cef0 0%, #dafcfc 50%, #d4cef0 100%);
+  border-bottom: 0px solid var(--border);
 }
 
 .hero__grid {
