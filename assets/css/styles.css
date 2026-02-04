@@ -94,7 +94,7 @@ p.hero__subtitle {
 
 .section {
   padding: 56px 0;
-  background: linear-gradient(90deg, #d4cef0 0%, #dafcfc 50%, #d4cef0 100%);
+  background: linear-gradient(90deg, #95bfd3 0%, #cbfafa 50%, #95bfd3 100%);
 }
 
 .section__header {
@@ -271,7 +271,7 @@ p.hero__subtitle {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(90deg, #d4cef0 0%, #dafcfc 50%, #d4cef0 100%);
+  background: linear-gradient(90deg, #a6cee0 0%, #a6cee0 50%, #a6cee0 100%);
 }
 
 .header__inner {
@@ -361,7 +361,7 @@ p.hero__subtitle {
 .hero {
   padding-top: 44px;
   padding-bottom: 56px;
-  background: linear-gradient(90deg, #d4cef0 0%, #dafcfc 50%, #d4cef0 100%);
+  background: linear-gradient(90deg, #95bfd3 0%, #cbfafa 50%, #95bfd3 100%);
   border-bottom: 0px solid var(--border);
 }
 
@@ -534,7 +534,7 @@ p.hero__subtitle {
 .footer {
   border-top: 1px solid var(--border);
   padding: 22px 0;
-  background: #ffffff;
+  background: #d1e7f1;
 }
 
 .footer__inner {
