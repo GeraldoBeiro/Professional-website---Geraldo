@@ -286,5 +286,20 @@
       banner.removeAttribute("hidden");
     });
   }
+  // =========================
+// Simple hero carousel
+// =========================
+const carouselImages = document.querySelectorAll(".carousel__img");
+
+if (carouselImages.length > 1) {
+  let current = 0;
+
+  setInterval(() => {
+    carouselImages[current].classList.remove("is-active");
+    current = (current + 1) % carouselImages.length;
+    carouselImages[current].classList.add("is-active");
+  }, 3500); // change every 3.5s
+}
+
 })();
 
